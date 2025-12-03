@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meu Perfil - Foodly</title>
+    <link rel="stylesheet" href="../../css/Cliente/perfilCliente.css" />
+  
+    <!-- Favicons -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../../assets/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../../assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../../assets/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="../../assets/favicon/site.webmanifest" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <header class="navbar">
+      <div class="navbar-left">
+        <div class="logo-box">
+          <img src="../../assets/logo.png" alt="Logo" />
+        </div>
+        <span class="logo-text">Foodly</span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="../Foodly/menuPrincipal.html">Início</a>
+        <a href="../Foodly/restaurantes.html">Restaurantes</a>
+        <a href="../Foodly/geradorComidas.html">Prato Surpresa</a>
+        <a href="../Foodly/suporte.html">Suporte</a>
+
+      </nav>
+
+      <div class="navbar-right">
+        <button class="icon-btn active" aria-label="Perfil">
+          <img src="../../assets/silhouette3.svg" alt="Cliente_Icon" />
+        </button>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="header">
+        <div class="avatar-container">
+          <img
+            id="perfil-avatar"
+            class="avatar-img"
+            src=""
+            alt="Foto de perfil"
+            style="display: none"
+          />
+          <div class="avatar" id="perfil-avatar-inicial">U</div>
+          <label
+            for="input-foto"
+            class="avatar-edit"
+            title="Formatos aceitos:&#10;JPG/JPEG (.jpg, .jpeg)&#10;PNG (.png)&#10;GIF (.gif)&#10;WebP (.webp)&#10;BMP (.bmp)&#10;SVG (.svg)&#10;&#10;Tamanho máximo: 5MB"
+            >📷
+            <span class="tooltip">
+              <strong>Formatos aceitos:</strong><br />
+              • JPG/JPEG<br />
+              • PNG<br />
+              • GIF<br />
+              • WebP<br />
+              • BMP<br />
+              • SVG<br />
+              <strong>Tamanho máximo: 5MB</strong>
+            </span>
+          </label>
+          <button
+            class="avatar-remove"
+            id="btn-remover-foto"
+            style="display: none"
+            title="Remover foto"
+          >
+            ❌
+          </button>
+          <input
+            type="file"
+            id="input-foto"
+            accept="image/*"
+            style="display: none"
+          />
+        </div>
+        <h1>
+          <strong>Meu Perfil</strong>
+          <span class="badge-premium" id="badge-premium" style="display: none">
+            PREMIUM
+            </span>
+        </h1>
+        <button class="btn-edit" id="btn-editar-perfil">
+          Editar Perfil
+        </button>
+      </div>
+
+      <div class="profile-info">
+        <div class="info-item">
+          <span class="label">Nome:</span>
+          <span class="value" id="perfil-nome">Carregando...</span>
+        </div>
+        <div class="info-item">
+          <span class="label">Email:</span>
+          <span class="value" id="perfil-email">Carregando...</span>
+        </div>
+        <div class="info-item">
+          <span class="label">Telefone:</span>
+          <span class="value" id="perfil-telefone">Carregando...</span>
+        </div>
+        <div class="info-item">
+          <span class="label">Endereço Padrão:</span>
+          <span class="value" id="perfil-endereco">Carregando...</span>
+        </div>
+        <div class="info-item">
+          <span class="label">Tipo de Usuário:</span>
+          <span class="value" id="perfil-tipo">Carregando...</span>
+        </div>
+      </div>
+
+      <!-- CARDS DE OPÇÕES -->
+      <section class="options-list">
+        <article
+          class="option-card"
+          id="card-usuario-premium"
+          style="cursor: pointer"
+        >
+          <div class="option-left">
+            <div class="option-icon premium"><img src="../../assets/crown.svg" alt="Crown_Icon" /> </div>
+            <div class="option-text-1">
+              <div class="mid-div">
+                <div class="option-title">
+                  Usuário Premium
+                  <span class="badge-upgrade">UPGRADE</span>
+                </div>
+                <p>Desbloqueie benefícios exclusivos e entregas grátis.</p>
+              </div>
+            </div>
+            <button
+              id="btn-cancelar-premium"
+              class="btn-cancel-premium"
+              style="display: none"
+              onclick="event.stopPropagation(); cancelarPremium();"
+            >
+            <img src="../../assets/cancel.svg" alt="Cancel_Icon" /> Cancelar
+            </button>
+          </div>
+        </article>
+
+        <a href="historicoPedidos.html">
+          <article class="option-card">
+          <div class="option-left">
+            <div class="option-icon report">
+                <img src="../../assets/clock.svg" alt="Clock_Icon" />
+            </div>
+            <div class="option-text-2">
+              <div class="option-title">
+                Histórico de Pedidos
+              </div>
+              <p>Visualize o que você mais gosta de pedir</p>
+            </div>
+          </div>
+        </article>
+      </a>
+      </section>
+
+      <div class="actions">
+        <a href="../Foodly/menuPrincipal.html" class="btn btn-primary"
+          >Voltar para Menu</a
+        >
+        <button id="btn-logout" class="btn btn-danger">Sair</button>
+      </div>
+    </div>
+
+    <!-- MODAL DE EDIÇÃO -->
+    <div id="modal-editar" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Editar Perfil</h2>
+          <button class="modal-close" id="modal-close">&times;</button>
+        </div>
+        <form id="form-editar-perfil">
+          <div class="form-group">
+            <label for="edit-nome">Nome Completo</label>
+            <input type="text" id="edit-nome" required />
+          </div>
+          <div class="form-group">
+            <label for="edit-email">Email</label>
+            <input type="email" id="edit-email" required />
+          </div>
+          <div class="form-group">
+            <label for="edit-telefone">Telefone</label>
+            <input type="tel" id="edit-telefone" required />
+          </div>
+          <div class="form-group">
+            <label for="edit-endereco">Endereço</label>
+            <input type="text" id="edit-endereco" required />
+          </div>
+          <div class="form-actions">
+            <button type="button" class="btn btn-secondary" id="btn-cancelar">
+              Cancelar
+            </button>
+            <button type="submit" class="btn btn-primary">
+              Salvar Alterações
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p>&copy; 2025 Foodly. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="../../JS/Cliente/perfilCliente.js"></script>
+  </body>
+</html>

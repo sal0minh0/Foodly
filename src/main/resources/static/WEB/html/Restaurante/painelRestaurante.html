@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Painel do Restaurante - Foodly</title>
+    <link rel="stylesheet" href="../../css/Restaurante/painelRestaurante.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <header class="navbar">
+      <div class="navbar-left">
+        <div class="logo-box">
+          <img src="../../assets/logo.png" alt="Logo" />
+        </div>
+        <span class="logo-text">Foodly</span>
+      </div>
+
+
+        <a href="perfilCliente.html" class="icon-btn" aria-label="Perfil">
+          <!-- Vazio para não quebrar a navbar-->
+        </a>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="header">
+        <div class="avatar-container">
+          <img
+            id="restaurante-avatar"
+            class="avatar-img"
+            src=""
+            alt="Logo do restaurante"
+            style="display: none"
+          />
+          <div class="avatar" id="restaurante-avatar-inicial">R</div>
+          <label
+            for="input-foto"
+            class="avatar-edit"
+            title="Formatos aceitos:&#10;JPG/JPEG (.jpg, .jpeg)&#10;PNG (.png)&#10;GIF (.gif)&#10;WebP (.webp)&#10;BMP (.bmp)&#10;SVG (.svg)&#10;&#10;Tamanho máximo: 5MB"
+            >📷
+            <span class="tooltip">
+              <strong>Formatos aceitos:</strong><br />
+              • JPG/JPEG<br />
+              • PNG<br />
+              • GIF<br />
+              • WebP<br />
+              • BMP<br />
+              • SVG<br />
+              <strong>Tamanho máximo: 5MB</strong>
+            </span>
+          </label>
+          <button
+            class="avatar-remove"
+            id="btn-remover-foto"
+            style="display: none"
+            title="Remover logo"
+          >
+            ❌
+          </button>
+          <input
+            type="file"
+            id="input-foto"
+            accept="image/*"
+            style="display: none"
+          />
+        </div>
+        <h1><strong>Painel do Restaurante</strong></h1>
+        <button class="btn-edit" id="btn-editar-restaurante">
+          <p>Editar Perfil</p>
+        </button>
+      </div>
+
+      <!-- INFORMAÇÕES DO RESTAURANTE -->
+      <div class="profile-info">
+        <h3 style="margin-bottom: 16px; color: #ff8a1f; font-size: 16px">
+          Restaurante
+        </h3>
+        <div class="info-item">
+          <span class="label">Nome:</span>
+          <span class="value" id="restaurante-nome">Carregando...</span>
+        </div>
+        <div class="info-item">
+          <span class="label">CNPJ:</span>
+          <span class="value" id="restaurante-cnpj">Carregando...</span>
+        </div>
+        <div class="info-item">
+          <span class="label">Endereço:</span>
+          <span class="value" id="restaurante-endereco">Carregando...</span>
+        </div>
+        <div class="info-item">
+          <span class="label">Status:</span>
+          <span class="value" id="restaurante-status">Carregando...</span>
+        </div>
+      </div>
+
+      <!-- DADOS DO PROPRIETÁRIO -->
+      <div class="profile-info">
+        <h3 style="margin-bottom: 16px; color: #ff8a1f; font-size: 16px">
+          Proprietário
+        </h3>
+        <div class="info-item">
+          <span class="label">Nome:</span>
+          <span class="value" id="proprietario-nome">Carregando...</span>
+        </div>
+        <div class="info-item">
+          <span class="label">Email:</span>
+          <span class="value" id="proprietario-email">Carregando...</span>
+        </div>
+        <div class="info-item">
+          <span class="label">Telefone:</span>
+          <span class="value" id="proprietario-telefone">Carregando...</span>
+        </div>
+      </div>
+
+        <a href="gerenciarCardapio.html">
+            <article class="option-card">
+          <div class="option-left">
+            <div class="option-icon menu">
+              <img src="../../assets/menu.svg" alt="Menu_Icon" />
+            </div>
+            <div class="option-text">
+              <div class="option-title">Gerenciar Cardápio</div>
+              <p>Adicione, edite ou remova produtos do cardápio</p>
+            </div>
+          </div>
+          <div class="option-arrow">›</div>
+        </article></a>
+
+
+        <a href="promocoesRestaurante.html">
+        <article class="option-card">
+          <div class="option-left">
+            <div class="option-icon promo">
+              <img src="../../assets/coupon.svg" alt="Coupon_Icon" />
+            </div>
+            <div class="option-text">
+              <div class="option-title">Promoções e Ofertas</div>
+              <p>Crie promoções para atrair mais clientes</p>
+            </div>
+          </div>
+          <div class="option-arrow">›</div>
+        </article></a>
+      </section>
+
+      <div class="actions">
+        <button id="btn-logout" class="btn btn-danger">Sair</button>
+      </div>
+    </div>
+
+    <!-- MODAL DE EDIÇÃO -->
+    <div id="modal-editar" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Editar Dados do Restaurante</h2>
+          <button class="modal-close" id="modal-close">&times;</button>
+        </div>
+        <form id="form-editar-restaurante">
+          <div class="form-group">
+            <label for="edit-nome-fantasia">Nome</label>
+            <input type="text" id="edit-nome-fantasia" required />
+          </div>
+          <div class="form-group">
+            <label for="edit-endereco">Endereço</label>
+            <input type="text" id="edit-endereco" required />
+          </div>
+          <div class="form-group">
+            <label for="edit-telefone">Telefone</label>
+            <input type="tel" id="edit-telefone" required />
+          </div>
+          <div class="form-group">
+            <label for="edit-dados-bancarios">Dados Bancários</label>
+            <textarea id="edit-dados-bancarios" rows="3"></textarea>
+          </div>
+          <div class="form-actions">
+            <button type="button" class="btn btn-secondary" id="btn-cancelar">
+              Cancelar
+            </button>
+            <button type="submit" class="btn btn-primary">
+              Salvar Alterações
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p>&copy; 2025 Foodly. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="../../JS/Restaurante/painelRestaurante.js"></script>
+  </body>
+</html>

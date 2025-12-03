@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Foodly - Cadastro de Restaurante</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/Restaurante/cadastroRestaurante.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <header class="navbar">
+      <div class="navbar-left">
+        <div class="logo-box">
+          <img src="../../assets/logo.png" alt="Logo" />
+        </div>
+        <span class="logo-text">Foodly</span>
+      </div>
+
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="page">
+      <!-- TÍTULO E DESCRIÇÃO -->
+      <section class="page-header">
+        <div>
+          <h1>Cadastro de restaurante</h1>
+          <p class="page-sub-header-1">
+            Registre o seu restaurante na nossa plataforma. 
+          </p>
+          <p class="page-sub-header-2">&hairsp;Preencha todos os campos obrigatórios para começar.</p>
+        </div>
+      </section>
+
+      <section class="layout">
+        <!-- COLUNA ESQUERDA: PALETA E DETALHES -->
+        <aside class="palette-card">
+          <h2>Dica: Paleta de Cores</h2>
+          <p class="palette-text">
+            Utilize essa paleta para manter a identidade visual das fotos parecida com o nosso aplicativo.
+          </p>
+
+          <div class="palette-list">
+            <div class="palette-item">
+              <span class="color-box primary"></span>
+              <div>
+                <strong>Primária</strong>
+                <p>#FF8A1F</p>
+              </div>
+            </div>
+
+            <div class="palette-item">
+              <span class="color-box primary-strong"></span>
+              <div>
+                <strong>Primária Forte</strong>
+                <p>#FF4B2B</p>
+              </div>
+            </div>
+
+            <div class="palette-item">
+              <span class="color-box bg-soft"></span>
+              <div>
+                <strong>Fundo Suave</strong>
+                <p>#FFECE0</p>
+              </div>
+            </div>
+
+            <div class="palette-item">
+              <span class="color-box text-main"></span>
+              <div>
+                <strong>Texto Principal</strong>
+                <p>#1F2933</p>
+              </div>
+            </div>
+
+            <div class="palette-item">
+              <span class="color-box text-muted"></span>
+              <div>
+                <strong>Texto Secundário</strong>
+                <p>#6B7280</p>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- COLUNA DIREITA: FORMULÁRIO DE CADASTRO -->
+        <section class="form-card">
+          <div class="form-header">
+            <h2>Informações do restaurante</h2>
+            <p>Preencha os campos abaixo para registrar seu restaurante.</p>
+          </div>
+
+          <form class="restaurant-form" id="form-cadastro-restaurante">
+            <div class="form-group">
+              <label for="nome">Nome do Restaurante<span class="destaque-asterisco">*</span></label>
+              <input
+                id="nome"
+                type="text"
+                placeholder="Ex: Burger Prime"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="proprietario">Nome do Proprietário<span class="destaque-asterisco">*</span></label>
+              <input
+                id="proprietario"
+                type="text"
+                placeholder="Seu nome completo"
+                required
+              />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email<span class="destaque-asterisco">*</span></label>
+                <input
+                  id="email"
+                  type="email"
+                  placeholder="email@restaurante.com"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="telefone">Telefone<span class="destaque-asterisco">*</span></label>
+                <input
+                  id="telefone"
+                  type="text"
+                  placeholder="(81) 99999-9999"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="senha">Senha<span class="destaque-asterisco">*</span></label>
+                <input
+                  id="senha"
+                  type="password"
+                  placeholder="Mínimo 6 caracteres"
+                  required
+                  minlength="6"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="confirmar-senha">Confirmar Senha<span class="destaque-asterisco">*</span></label>
+                <input
+                  id="confirmar-senha"
+                  type="password"
+                  placeholder="Digite a senha novamente"
+                  required
+                  minlength="6"
+                />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="cnpj">CNPJ<span class="destaque-asterisco">*</span></label>
+                <input
+                  id="cnpj"
+                  type="text"
+                  placeholder="00.000.000/0000-00"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="endereco">Endereço Completo<span class="destaque-asterisco">*</span></label>
+                <input
+                  id="endereco"
+                  type="text"
+                  placeholder="Rua, número, bairro, cidade"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="dados-bancarios">Dados Bancários</label>
+              <textarea
+                id="dados-bancarios"
+                rows="2"
+                placeholder="Banco, agência, conta..."
+                style="resize: none; padding: 10px 0 30px 9px;"
+              ></textarea>
+            </div>
+
+            <div class="form-footer">
+              <p style="color: #6b7280; font-size: 14px; margin-bottom: 16px; color: #FF4B2B">
+               <span class="destaque-asterisco">*</span> Campos obrigatórios
+              </p>
+
+              <button type="submit" class="btn-submit">
+                Cadastrar Restaurante
+              </button>
+
+              <p
+                style="
+                  text-align: center;
+                  margin-top: 10px;
+                  color: #6b7280;
+                  font-size: 14px;
+                "
+              >
+                Já tem uma conta?
+                <a
+                  href="loginRestaurante.html"
+                  style="
+                    color: #ff8a1f;
+                    text-decoration: none;
+                    font-weight: 600;
+                  "
+                  >Fazer login</a
+                >
+              </p>
+            </div>
+          </form>
+        </section>
+      </section>
+    </main>
+
+    <!-- JavaScript -->
+    <script src="../../JS/Restaurante/cadastroRestaurante.js"></script>
+  </body>
+</html>

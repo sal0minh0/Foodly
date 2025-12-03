@@ -1,0 +1,349 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* RESET BÁSICO */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --orange: #ff8a1f;
+  --orange-strong: #ff4b2b;
+  --bg-soft: #fff4eb;
+  --text-main: #1f2933;
+  --text-muted: #6b7b8b;
+}
+
+/* BODY / FUNDO */
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg-soft);
+  color: var(--text-main);
+}
+
+/* LOADING ANIMATION */
+.loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-soft);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.3s ease-out;
+}
+
+.loader-overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid rgba(255, 138, 31, 0.2);
+  border-bottom-color: var(--orange);
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* MAIN CONTENT */
+.main-content {
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+}
+
+.main-content.visible {
+  opacity: 1;
+}
+
+/* CENTRALIZA CONTEÚDO NA TELA */
+.page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+
+/* CONTAINER GERAL */
+.auth-container {
+  text-align: center;
+}
+
+/* BRAND (LOGO E TÍTULOS) */
+.brand {
+  margin-bottom: 22px;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.brand-logo img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.brand-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.brand-subtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* CARD BRANCO CENTRAL */
+.card {
+  background-color: #ffffff;
+  border-radius: 18px;
+  padding: 26px 26px 20px;
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.3);
+  text-align: left;
+}
+
+.card-title {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.card-subtitle {
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 18px;
+}
+
+/* BOTÕES DE ESCOLHA */
+.profile-choice {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.profile-btn {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background-color: #f7fafc;
+  border: 2px solid #e5e9f0;
+  border-radius: 10px;
+  padding: 16px;
+  text-decoration: none;
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+
+.profile-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 18px rgba(15, 23, 42, 0.1);
+}
+
+.profile-btn.cliente {
+  border-color: #e5e9f0;
+}
+
+.profile-btn.cliente:hover {
+  background: linear-gradient(135deg, #667eea08 0%, #764ba208 100%);
+  border-color: #2f51e9;
+  box-shadow: 0 10px 18px rgba(102, 126, 234, 0.2);
+}
+
+.profile-btn.restaurante {
+  border-color: #e5e9f0;
+}
+
+.profile-btn.restaurante:hover {
+  background: linear-gradient(135deg, #ff8a1f08 0%, #ff4b2b08 100%);
+  border-color: var(--orange);
+  box-shadow: 0 10px 18px rgba(255, 138, 31, 0.2);
+}
+
+.profile-icon img {
+  width: 50px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.profile-info {
+  flex: 1;
+  text-align: left;
+}
+
+.profile-info h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 3px;
+}
+
+.profile-info p {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.profile-arrow {
+  font-size: 20px;
+  color: #9ca3af;
+  transition: all 0.15s ease;
+  line-height: 1;
+}
+
+.profile-btn:hover .profile-arrow {
+  transform: translateX(3px);
+}
+
+.profile-btn.cliente:hover .profile-arrow {
+  color: #3a5ae9;
+}
+
+.profile-btn.restaurante:hover .profile-arrow {
+  color: var(--orange);
+}
+
+/* DIVIDER */
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 16px 0;
+  color: var(--text-muted);
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #e5e9f0;
+}
+
+.divider::before {
+  margin-right: 10px;
+}
+
+.divider::after {
+  margin-left: 10px;
+}
+
+/* LINKS DE CADASTRO */
+.register-links {
+  text-align: center;
+  padding: 16px;
+  background: #f7fafc;
+  border-radius: 10px;
+  margin-top: 12px;
+}
+
+.register-links p {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+.register-links p:first-child {
+  margin-bottom: 6px;
+}
+
+.register-links p strong {
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.register-links a {
+  color: var(--orange-strong);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.15s ease;
+}
+
+.register-links a:hover {
+  text-decoration: underline;
+}
+
+.register-links a.restaurante-link {
+  color: var(--orange-strong);
+}
+
+/* FOOTER */
+.footer-text {
+  margin-top: 12px;
+  font-size: 11px;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+  .card {
+    padding: 20px 16px 16px;
+    border-radius: 14px;
+  }
+
+  .brand-title {
+    font-size: 22px;
+  }
+
+  .brand-subtitle {
+    font-size: 13px;
+  }
+
+  .card-title {
+    font-size: 18px;
+  }
+
+  .profile-btn {
+    padding: 14px;
+  }
+
+  .profile-icon img {
+    width: 40px;
+  }
+
+  .profile-info h3 {
+    font-size: 15px;
+  }
+
+  .profile-info p {
+    font-size: 12px;
+  }
+
+  .register-links {
+    padding: 14px;
+  }
+}

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gerenciar Promoções - Foodly</title>
+    <link rel="stylesheet" href="../../css/Restaurante/promocoesRestaurante.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <header class="navbar">
+      <div class="navbar-left">
+        <div class="logo-box">
+          <img src="../../assets/logo.png" alt="Logo" />
+        </div>
+        <span class="logo-text">Foodly</span>
+      </div>
+
+
+        <a href="perfilCliente.html" class="icon-btn" aria-label="Perfil">
+          <img src="../../assets/return.svg" alt="Return" />
+        </a>
+      </div>
+    </header>
+
+    <div class="container">
+      <!-- HEADER -->
+      <div class="page-header">
+        <div>
+          <h1>Gerenciar Promoções</h1>
+          <p class="subtitle">
+            Crie e gerencie promoções para atrair mais clientes
+          </p>
+        </div>
+        <button class="btn btn-primary" id="btn-adicionar-promocao">
+          <img src="../../assets/add.svg" alt="Add" /> Adicionar Promoção
+        </button>
+      </div>
+
+      <!-- FILTROS E BUSCA -->
+      <div class="filters-section">
+        <div class="search-box">
+          <span class="search-icon">
+            <img src="../../assets/search2.svg" alt="Search" />
+          </span>
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Buscar promoções..."
+          />
+        </div>
+        <select id="filter-status" class="filter-select">
+          <option value="todos">Todas as promoções</option>
+          <option value="ativos">Apenas ativas</option>
+          <option value="inativos">Apenas inativas</option>
+        </select>
+      </div>
+
+      <!-- LISTA DE PROMOÇÕES -->
+      <div class="produtos-container" id="promocoes-lista">
+        <!-- Promoções serão inseridas aqui via JavaScript -->
+        <div class="empty-state">
+          <div class="empty-icon">🎁</div>
+          <h3>Nenhuma promoção cadastrada</h3>
+          <p>Clique em "Adicionar Promoção" para começar</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL ADICIONAR/EDITAR PROMOÇÃO -->
+    <div id="modal-promocao" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 id="modal-title">Adicionar Promoção</h2>
+          <button class="modal-close" id="modal-close">&times;</button>
+        </div>
+        <form id="form-promocao">
+          <div class="form-group">
+            <label for="promocao-titulo">Título da Promoção</label>
+            <input
+              type="text"
+              id="promocao-titulo"
+              placeholder="Ex: Desconto em pizzas"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="promocao-descricao">Descrição</label>
+            <textarea
+              id="promocao-descricao"
+              rows="3"
+              placeholder="Descreva os detalhes da promoção..."
+              style="resize: none"
+            ></textarea>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="promocao-tipo">Tipo de Desconto</label>
+              <select id="promocao-tipo" required>
+                <option value="percentual">Percentual (%)</option>
+                <option value="fixo">Valor Fixo (R$)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="promocao-valor">Valor do Desconto</label>
+              <input type="text" id="promocao-valor" placeholder="-" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="promocao-inicio">Data de Início</label>
+              <input type="datetime-local" id="promocao-inicio" required />
+            </div>
+
+            <div class="form-group">
+              <label for="promocao-fim">Data de Fim</label>
+              <input type="datetime-local" id="promocao-fim" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="checkbox-label">
+              <input type="checkbox" id="promocao-ativo" checked />
+              <span>Promoção ativa</span>
+            </label>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">
+              Salvar Promoção
+            </button>
+            <button type="button" class="btn btn-secondary" id="btn-cancelar">
+              Cancelar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p>&copy; 2025 Foodly. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="../../JS/Restaurante/promocoesRestaurante.js"></script>
+  </body>
+</html>

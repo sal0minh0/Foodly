@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Foodly - Escolha seu perfil</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/escolhaPerfil.css" />
+
+    <!-- Favicons -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../assets/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../assets/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="../assets/favicon/site.webmanifest" />
+  </head>
+
+  <body>
+    <!-- Loading Overlay -->
+    <div class="loader-overlay" id="loader">
+      <span class="loader"></span>
+    </div>
+
+    <div class="page main-content" id="mainContent">
+      <div class="auth-container">
+        <div class="brand">
+          <div class="brand-logo">
+            <img src="../assets/logo.png" alt="Logo" />
+          </div>
+          <h1 class="brand-title">Bem-vindo ao Foodly!</h1>
+          <p class="brand-subtitle">Escolha como deseja acessar a plataforma</p>
+        </div>
+
+        <div class="card">
+          <h2 class="card-title">Selecione seu perfil</h2>
+          <p class="card-subtitle">Escolha a opção que melhor descreve você</p>
+
+          <div class="profile-choice">
+            <a href="./Cliente/loginCliente.html" class="profile-btn cliente">
+              <div class="profile-icon">
+                <img src="../assets/silhouette.svg" alt="Cliente_Icon" />
+              </div>
+              <div class="profile-info">
+                <h3>Sou Cliente</h3>
+                <p>Quero fazer pedidos e receber no conforto da minha casa</p>
+              </div>
+              <div class="profile-arrow">›</div>
+            </a>
+
+            <a
+              href="./Restaurante/loginRestaurante.html"
+              class="profile-btn restaurante"
+            >
+              <div class="profile-icon">
+                <img src="../assets/restaurant.svg" alt="Restaurante_Icon" />
+              </div>
+              <div class="profile-info">
+                <h3>Sou Restaurante</h3>
+                <p>Quero gerenciar meu restaurante e receber pedidos</p>
+              </div>
+              <div class="profile-arrow">›</div>
+            </a>
+          </div>
+
+          <div class="divider">ou</div>
+
+          <div class="register-links">
+            <p><strong>Não tem uma conta?</strong></p>
+            <p>
+              <a href="./Cliente/cadastroCliente.html"
+                >Cadastre-se como cliente</a
+              >
+              <span style="color: #d1d5db; margin: 0 8px">•</span>
+              <a
+                href="./Restaurante/cadastroRestaurante.html"
+                class="restaurante-link"
+                >Cadastre seu restaurante</a
+              >
+            </p>
+          </div>
+        </div>
+
+        <p class="footer-text">
+          &copy; 2025 Foodly. Todos os direitos reservados.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      window.addEventListener("load", function () {
+        setTimeout(function () {
+          const loader = document.getElementById("loader");
+          const mainContent = document.getElementById("mainContent");
+
+          loader.classList.add("hidden");
+          mainContent.classList.add("visible");
+
+          // Remove loader from DOM after transition
+          setTimeout(function () {
+            loader.style.display = "none";
+          }, 300);
+        }, 1300);
+      });
+    </script>
+  </body>
+</html>

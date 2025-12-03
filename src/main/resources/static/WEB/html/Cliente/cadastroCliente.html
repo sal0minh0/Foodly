@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Foodly - Criar Conta</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/Cliente/cadastroCliente.css" />
+  
+  <!-- Favicons -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../../assets/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../../assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../../assets/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="../../assets/favicon/site.webmanifest" />
+  </head>
+  <body>
+    <div class="page">
+      <div class="auth-container">
+        <!-- Logo + título principal -->
+        <div class="brand">
+          <div class="brand-logo">
+            <img src="../../assets/logo.png" alt="Logo" />
+          </div>
+          <h1 class="brand-title">Bem-vindo ao Foodly!</h1>
+          <p class="brand-subtitle">
+            Crie sua conta e comece a pedir seus pratos favoritos
+          </p>
+        </div>
+
+        <!-- Card de cadastro -->
+        <div class="card">
+          <h2 class="card-title">Criar Conta</h2>
+          <p class="card-subtitle">
+            Preencha os dados abaixo para se cadastrar
+          </p>
+
+          <!-- id adicionado para possível uso com JS -->
+          <form class="form" id="form-cadastro-cliente">
+            <!-- Nome -->
+            <div class="form-group">
+              <label for="nome">Nome Completo</label>
+              <div class="input-wrapper">
+                <span class="input-icon">
+                  <img src="../../assets/silhouette2.svg" alt="Person_Icon">
+                </span>
+                <input
+                  type="text"
+                  id="nome"
+                  name="nome"
+                  placeholder="Digite seu nome completo"
+                  required
+                />
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+              <label for="email">Email</label>
+              <div class="input-wrapper">
+                <span class="input-icon">
+                  <img src="../../assets/mail.svg" alt="Mail_Icon">
+                </span>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Digite seu email"
+                  required
+                />
+              </div>
+            </div>
+
+            <!-- Telefone -->
+            <div class="form-group">
+              <label for="telefone">Telefone</label>
+              <div class="input-wrapper">
+                <span class="input-icon">
+                  <img src="../../assets/cellphone.svg" alt="Cellphone_Icon">
+                </span>
+                <input
+                  type="tel"
+                  id="telefone"
+                  name="telefone"
+                  placeholder="(11) 99999-9999"
+                  required
+                />
+              </div>
+            </div>
+
+            <!-- Endereço -->
+            <div class="form-group">
+              <label for="enderecoPadrao">Endereço</label>
+              <div class="input-wrapper">
+                <span class="input-icon">
+                  <img src="../../assets/address.svg" alt="Address_Icon">
+                </span>
+                <input
+                  type="text"
+                  id="enderecoPadrao"
+                  name="enderecoPadrao"
+                  placeholder="Rua, número, bairro"
+                />
+              </div>
+            </div>
+
+            <!-- Senha -->
+            <div class="form-group">
+              <label for="senha">Senha</label>
+              <div class="input-wrapper">
+                <span class="input-icon">
+                  <img src="../../assets/lock.svg" alt="Lock_Icon">
+                </span>
+                <input
+                  type="password"
+                  id="senha"
+                  name="senha"
+                  placeholder="Digite sua senha"
+                  required
+                />
+              </div>
+            </div>
+
+            <!-- Confirmar senha -->
+            <div class="form-group">
+              <label for="confirmarSenha">Confirmar Senha</label>
+              <div class="input-wrapper">
+                <span class="input-icon">
+                  <img src="../../assets/lock.svg" alt="Lock_Icon">
+                </span>
+                <input
+                  type="password"
+                  id="confirmarSenha"
+                  name="confirmarSenha"
+                  placeholder="Confirme sua senha"
+                  required
+                />
+              </div>
+            </div>
+
+            <!-- Botão -->
+            <button type="submit" class="btn-primary">Criar Conta</button>
+          </form>
+
+          <!-- Link para login -->
+          <p class="bottom-text">
+            Já tem uma conta?
+            <a href="loginCliente.html">Faça login</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript principal -->
+    <script src="../../JS/Cliente/cadastroCliente.js" defer></script>
+  </body>
+</html>

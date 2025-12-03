@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Foodly - Gerador de Comidas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/Foodly/geradorComidas.css" />
+  
+  <!-- Favicons -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../../assets/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../../assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../../assets/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="../../assets/favicon/site.webmanifest" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <header class="navbar">
+      <div class="navbar-left">
+        <div class="logo-box">
+          <img src="../../assets/logo.png" alt="Logo" /> 
+        </div>
+        <span class="logo-text">Foodly</span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="menuPrincipal.html">Início</a>
+        <a href="restaurantes.html">Restaurantes</a>
+        <a href="#">Prato Surpresa</a>
+        <a href="suporte.html">Suporte</a>
+      </nav>
+
+      <div class="navbar-right">
+        <a href="../Cliente/perfilCliente.html" class="icon-btn" aria-label="Perfil">
+          <img src="../../assets/silhouette.svg" alt="Person" />
+        </a>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="page">
+      <section class="header-section">
+        <h1>Prato &thinsp;Surpresa</h1>
+        <p>Não sabe o que comer? Deixe a sorte decidir!</p>
+      </section>
+
+      <section class="generator-controls">
+        <button class="generate-btn" id="generateBtn">
+          🎲 Gerar Comida Aleatória
+        </button>
+      </section>
+
+      <section
+        class="generator-result"
+        id="generatorResult"
+        style="display: none"
+      >
+        <h2>🎉 Sua comida da sorte:</h2>
+        <div class="result-card" id="resultCard"></div>
+        <div class="result-actions">
+          <button class="btn-secondary" id="newSuggestionBtn">
+            <img src="../../assets/renew2.svg" alt="Renew_Icon"> Nova Sugestão
+          </button>
+          <button class="btn-primary" id="addToCartBtn" style="display: none">
+            <img src="../../assets/plus.svg" alt="Plus_Icon"> Adicionar
+          </button>
+        </div>
+      </section>
+
+      <section class="empty-state" id="emptyState">
+        <div class="empty-icon">🍽️</div>
+        <p>Clique no botão acima para gerar uma sugestão!</p>
+      </section>
+
+      <section
+        class="history-section"
+        id="historySection"
+        style="display: none"
+      >
+        <h3>
+          <span><img src="../../assets/clipboard.svg" alt="Clipboard_Icon"> Últimas sugestões:</span>
+          <button class="btn-danger" id="clearHistoryBtn">
+            <img src="../../assets/delete.svg" alt="Delete_Icon"> Limpar
+          </button>
+        </h3>
+        <div class="history-list" id="historyList"></div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-column footer-about">
+          <div class="footer-logo">
+            <span class="logo-text footer-logo-text">Foodly</span>
+          </div>
+          <h4>Sobre Nós</h4>
+          <p>
+            Somos uma plataforma inovadora que conecta você aos melhores
+            restaurantes parceiros. Nossa missão é facilitar o acesso à
+            gastronomia de qualidade com entrega rápida e experiência
+            excepcional.
+          </p>
+        </div>
+
+        <div class="footer-column">
+          <h4>Contato</h4>
+          <ul class="footer-contact">
+            <li>
+              <img src="../../assets/call.svg" alt="Call_Icon" />
+              <div class="footer-contact-content">
+                <h5>(81) 99999-9999</h5>
+                <span>Atendimento 24h</span>
+              </div>
+            </li>
+            <li>
+              <img src="../../assets/mail2.svg" alt="Mail_Icon" />
+              <div class="footer-contact-content">
+                <h5>contato@foodly.com</h5>
+                <span>Respostas em até 2h</span>
+              </div>
+            </li>
+            <li>
+              <img src="../../assets/map.svg" alt="Map_Icon" />
+              <div class="footer-contact-content">
+                <h5>Recife, Pernambuco</h5>
+                <span>Atendemos toda região metropolitana</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Foodly. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <script src="../../JS/Foodly/geradorComidas.js" defer></script>
+  </body>
+</html>

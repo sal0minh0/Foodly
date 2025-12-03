@@ -1,0 +1,222 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --orange: #ff8a1f;
+  --orange-strong: #ff4b2b;
+  --bg-soft: #fff4eb;
+  --text-main: #1f2933;
+  --text-muted: #6b7b8b;
+}
+
+/* FUNDO GERAL */
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg-soft);
+  color: var(--text-main);
+}
+
+/* CENTRALIZA TUDO NA TELA */
+.page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+
+/* CONTAINER */
+.auth-container {
+  text-align: center;
+}
+
+/* LOGO E TÍTULOS DE CIMA */
+.brand-logo {
+  margin: 0 auto 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-logo img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.brand-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.brand-subtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 22px;
+}
+
+/* CARD BRANCO DE LOGIN */
+.card {
+  background-color: #ffffff;
+  border-radius: 18px;
+  padding: 24px 26px 20px;
+  max-width: 380px;
+  width: 100%;
+  margin: 0 auto;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.2);
+  text-align: left;
+}
+
+.card-title {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.card-subtitle {
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 18px;
+}
+
+/* FORMULÁRIO */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* GRUPOS DE CAMPOS */
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+/* INPUT + ÍCONE */
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #f7fafc;
+  border-radius: 10px;
+  border: 2px solid #e5e9f0;
+  padding: 0 10px;
+}
+
+.input-icon {
+  font-size: 15px;
+  opacity: 0.7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.input-icon img {
+  width: 18px;
+  height: 18px;
+  display: block;
+  opacity: 0.7;
+}
+
+.input-wrapper input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  padding: 10px 0;
+  outline: none;
+}
+
+/* LINK ESQUECI MINHA SENHA */
+.forgot-wrapper {
+  text-align: right;
+  margin-top: 4px;
+}
+
+.forgot-link {
+  font-size: 12px;
+  color: var(--orange-strong);
+  text-decoration: none;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+}
+
+/* BOTÃO ENTRAR */
+.btn-primary {
+  margin-top: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 999px;
+  padding: 12px 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffffff;
+  cursor: pointer;
+  background-image: linear-gradient(90deg, var(--orange), var(--orange-strong));
+  box-shadow: 0 10px 18px rgba(255, 138, 31, 0.35);
+  transition: transform 0.1s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+
+.btn-primary:hover {
+  opacity: 0.96;
+  box-shadow: 0 12px 22px rgba(255, 138, 31, 0.4);
+  transform: translateY(-1px);
+}
+
+/* TEXTO INFERIOR (CADASTRE-SE) */
+.bottom-text {
+  margin-top: 14px;
+  font-size: 13px;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.bottom-text a {
+  color: var(--orange-strong);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.bottom-text a:hover {
+  text-decoration: underline;
+}
+
+/* RODAPÉ */
+.footer-text {
+  margin-top: 12px;
+  font-size: 11px;
+  color: var(--text-muted);
+  align-self: center;
+}
+
+footer {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* RESPONSIVO */
+@media (max-width: 480px) {
+  .card {
+    padding: 20px 16px 16px;
+    border-radius: 14px;
+  }
+
+  .brand-title {
+    font-size: 22px;
+  }
+}

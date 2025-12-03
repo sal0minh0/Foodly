@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gerenciar Cardápio - Foodly</title>
+    <link rel="stylesheet" href="../../css/Restaurante/gerenciarCardapio.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <header class="navbar">
+      <div class="navbar-left">
+        <div class="logo-box">
+          <img src="../../assets/logo.png" alt="Logo" />
+        </div>
+        <span class="logo-text">Foodly</span>
+      </div>
+
+
+        <a href="perfilCliente.html" class="icon-btn" aria-label="Perfil">
+          <img src="../../assets/return.svg" alt="Return" />
+        </a>
+      </div>
+    </header>
+
+    <div class="container">
+      <!-- HEADER -->
+      <div class="page-header">
+        <div>
+          <h1>Gerenciar Cardápio</h1>
+          <p class="subtitle">
+            Adicione, edite ou remova produtos do seu cardápio
+          </p>
+        </div>
+        <button class="btn btn-primary" id="btn-adicionar-produto">
+          <img src="../../assets/add.svg" alt="Add" /> Adicionar Produto
+        </button>
+      </div>
+
+      <!-- FILTROS E BUSCA -->
+      <div class="filters-section">
+        <div class="search-box">
+          <span class="search-icon">
+            <img src="../../assets/search2.svg" alt="Search" />
+          </span>
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Buscar produtos..."
+          />
+        </div>
+        <select id="filter-status" class="filter-select">
+          <option value="todos">Todos os produtos</option>
+          <option value="ativos">Apenas ativos</option>
+          <option value="inativos">Apenas inativos</option>
+        </select>
+      </div>
+
+      <!-- LISTA DE PRODUTOS -->
+      <div class="produtos-container" id="produtos-lista">
+        <!-- Produtos serão inseridos aqui via JavaScript -->
+        <div class="empty-state">
+          <div class="empty-icon">📦</div>
+          <h3>Nenhum produto cadastrado</h3>
+          <p>Clique em "Adicionar Produto" para começar</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL ADICIONAR/EDITAR PRODUTO -->
+    <div id="modal-produto" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 id="modal-title">Adicionar Produto</h2>
+          <button class="modal-close" id="modal-close">&times;</button>
+        </div>
+        <form id="form-produto">
+          <div class="form-group">
+            <label for="produto-nome">Nome do Produto</label>
+            <input
+              type="text"
+              id="produto-nome"
+              placeholder="Ex: X-Burger Especial"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="produto-descricao">Descrição</label>
+            <textarea
+              id="produto-descricao"
+              rows="3"
+              placeholder="Descreva os ingredientes e características..."
+              style="resize: none;"
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="produto-imagem">Imagem do Produto</label>
+            <div class="imagem-upload-container">
+              <div class="imagem-preview" id="imagem-preview">
+                <img
+                  id="preview-img"
+                  src=""
+                  alt="Preview"
+                  style="display: none"
+                />
+                <span id="preview-placeholder" class="preview-placeholder"
+                  ></span>Nenhuma imagem selecionada</span
+                >
+              </div>
+              <div class="imagem-actions">
+                <label for="input-imagem-produto" class="btn-upload">
+                  <p>Escolher Imagem</p>
+                </label>
+                <button
+                  type="button"
+                  id="btn-remover-imagem"
+                  class="btn-remove-img"
+                  style="display: none"
+                >
+                  ❌ Remover
+                </button>
+                <input
+                  type="file"
+                  id="input-imagem-produto"
+                  accept="image/*"
+                  style="display: none"
+                />
+              </div>
+              <p class="hint-text">Formatos: JPG, PNG, GIF, WebP (máx. 5MB)</p>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="produto-preco">Preço (R$) *</label>
+              <input
+                type="text"
+                id="produto-preco"
+                placeholder="0,00"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="produto-categoria">Categoria</label>
+              <select id="produto-categoria">
+                <option value="Clássico">Clássico</option>
+                <option value="Baixo Custo">Baixo Custo</option>
+                <option value="Japonês">Japonês</option>
+                <option value="Chinês">Chinês</option>
+                <option value="Árabe">Árabe</option>
+                <option value="Nordestino">Nordestino</option>
+                <option value="Vegano">Vegano</option>
+                <option value="Low-Carb">Low-Carb</option>
+                <option value="Bebida">Bebida</option>
+                <option value="Sobremesa">Sobremesa</option>
+                <option value="Outros">Outros</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="checkbox-label">
+              <input type="checkbox" id="produto-ativo" checked />
+              <span>Produto disponível para venda</span>
+            </label>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">
+              Salvar Produto
+            </button>
+            <button type="button" class="btn btn-secondary" id="btn-cancelar">
+              Cancelar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p>&copy; 2025 Foodly. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="../../JS/Restaurante/gerenciarCardapio.js"></script>
+  </body>
+</html>

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Foodly - Restaurantes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS da página de restaurantes -->
+    <link rel="stylesheet" href="../../css/Foodly/restaurantes.css" />
+    <link rel="stylesheet" href="../../css/Cliente/historicoPedidos.css" />
+  
+    <!-- Favicons -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../../assets/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../../assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../../assets/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="../../assets/favicon/site.webmanifest" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <header class="navbar">
+      <div class="navbar-left">
+        <div class="logo-box">
+          <img src="../../assets/logo.png" alt="Logo" />
+        </div>
+        <span class="logo-text">Foodly</span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="menuPrincipal.html">Início</a>
+        <a href="#">Restaurantes</a>
+        <a href="geradorComidas.html">Prato Surpresa</a>
+        <a href="suporte.html">Suporte</a>
+      </nav>
+
+      <div class="navbar-right">
+        <div class="search-wrapper">
+          <input type="text" placeholder="Buscar restaurantes..." />
+          <button class="search-btn">
+             <img src="../../assets/search.svg" alt="Search" />
+          </button>
+        </div>
+
+        <!-- Ícone do sininho + dropdown de promoções -->
+        <div class="notification-wrapper">
+          <button class="icon-btn notification-btn" aria-label="Promoções">
+            <img src="../../assets/notification.svg" alt="Notification" />
+          </button>
+
+          <!-- PROMO DROPDOWN -->
+          <div class="promo-dropdown">
+            <div class="promo-header">
+              <h3>Promoções Especiais</h3>
+              <p>Ofertas dos nossos restaurantes</p>
+            </div>
+
+            <div class="promo-list">
+              <!-- Promo 1 -->
+              <article class="promo-item">
+                <div class="promo-thumb">
+                  <img
+                    src="https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg"
+                    alt="Burger Prime"
+                  />
+                </div>
+                <div class="promo-info">
+                  <h4>50% OFF na primeira compra</h4>
+                  <p class="promo-restaurant">Burger Prime</p>
+                </div>
+                <span class="promo-badge">Novo</span>
+              </article>
+
+              <!-- Promo 2 -->
+              <article class="promo-item">
+                <div class="promo-thumb">
+                  <img
+                    src="https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg"
+                    alt="Nonna Bella"
+                  />
+                </div>
+                <div class="promo-info">
+                  <h4>Pizza Família por R$ 39,90</h4>
+                  <p class="promo-restaurant">Nonna Bella</p>
+                </div>
+                <span class="promo-badge">Novo</span>
+              </article>
+
+              <!-- Promo 3 -->
+              <article class="promo-item">
+                <div class="promo-thumb">
+                  <img
+                    src="https://images.pexels.com/photos/1640770/pexels-photo-1640770.jpeg"
+                    alt="Green Life"
+                  />
+                </div>
+                <div class="promo-info">
+                  <h4>Combo Saudável + Suco</h4>
+                  <p class="promo-restaurant">Green Life</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ícone do carrinho + dropdown de itens -->
+        <div class="cart-wrapper">
+          <button class="icon-btn cart-btn" aria-label="Carrinho">
+            <img src="../../assets/cart.svg" alt="Cart" />
+            <span class="cart-badge" id="cart-badge" style="display: none"
+              >0</span
+            >
+          </button>
+
+          <!-- CART DROPDOWN -->
+          <div class="cart-dropdown">
+            <div class="cart-header">
+              <h3>Seu Carrinho</h3>
+              <p id="cart-subtitle">Nada</p>
+            </div>
+
+            <div class="cart-list" id="cart-list">
+              <!-- Items serão adicionados dinamicamente -->
+              <div class="cart-empty" id="cart-empty">
+                <p>🛒 Seu carrinho está vazio</p>
+                <span>Adicione itens do cardápio!</span>
+              </div>
+            </div>
+
+            <div class="cart-total" id="cart-total" style="display: none">
+              <p>Total: <strong id="cart-total-value">R$ 0,00</strong></p>
+            </div>
+
+            <button
+              class="cart-checkout"
+              id="cart-checkout"
+              style="display: none"
+            >
+              Finalizar Pedido
+            </button>
+          </div>
+        </div>
+
+        <a href="../Cliente/perfilCliente.html" class="icon-btn" aria-label="Perfil">
+          <img src="../../assets/silhouette.svg" alt="Person" />
+        </a>
+      </div>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="page">
+      <!-- Título + filtros -->
+      <section class="header-section">
+        <div>
+          <h1>Restaurantes perto de você</h1>
+          <p>
+            Escolha entre opções selecionadas com entrega rápida, boa avaliação
+            e comida de qualidade.
+          </p>
+        </div>
+
+        <div class="filters">
+          <button class="filter-btn filter-btn-active" data-category="todos">
+            Todos
+          </button>
+          <button class="filter-btn" data-category="hamburguer">
+            Hambúrguer
+          </button>
+          <button class="filter-btn" data-category="pizza">Pizza</button>
+          <button class="filter-btn" data-category="saudavel">Saudável</button>
+          <button class="filter-btn" data-category="sushi">Sushi</button>
+        </div>
+      </section>
+
+      <!-- LISTA DE RESTAURANTES -->
+      <section class="restaurants-grid">
+        <!-- 1 -->
+        <article class="restaurant-card" data-category="hamburguer">
+          <div class="restaurant-thumb">
+            <img
+              src="https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg"
+              alt="Burger Prime"
+            />
+          </div>
+          <div class="restaurant-info">
+            <h2>Burger Prime</h2>
+            <p class="restaurant-type">
+              Hambúrguer • Smash • Fritas artesanais
+            </p>
+
+            <div class="restaurant-meta">
+              <span><img src="../../assets/star2.svg" alt="Star-Icon"> 4,8</span>
+              <span><img src="../../assets/timer.svg" alt="Timer-Icon"> 30–40 min</span>
+              <span><img src="../../assets/location.svg" alt="Location-Icon"> 2,3 km</span>
+            </div>
+
+            <p class="restaurant-fee">
+              Taxa de entrega: <strong>&nbsp;R$ 5,90</strong>
+            </p>
+
+            <button class="btn-cardapio" type="button">Ver cardápio</button>
+          </div>
+        </article>
+
+        <!-- 2 -->
+        <article class="restaurant-card" data-category="pizza">
+          <div class="restaurant-thumb">
+            <img
+              src="https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg"
+              alt="Nonna Bella"
+            />
+          </div>
+          <div class="restaurant-info">
+            <h2>Nonna Bella</h2>
+            <p class="restaurant-type">Pizzas • Massas • Forno a lenha</p>
+
+            <div class="restaurant-meta">
+              <span><img src="../../assets/star2.svg" alt="Star-Icon"> 4,7</span>
+              <span><img src="../../assets/timer.svg" alt="Timer-Icon"> 35–50 min</span>
+              <span><img src="../../assets/location.svg" alt="Location-Icon"> 3,1 km</span>
+            </div>
+
+            <p class="restaurant-fee">
+              Taxa de entrega: <strong>&nbsp;Grátis acima de R$ 60</strong>
+            </p>
+
+            <button class="btn-cardapio" type="button">Ver cardápio</button>
+          </div>
+        </article>
+
+        <!-- 3 -->
+        <article class="restaurant-card" data-category="saudavel">
+          <div class="restaurant-thumb">
+            <img
+              src="https://images.pexels.com/photos/1640770/pexels-photo-1640770.jpeg"
+              alt="Green Life"
+            />
+          </div>
+          <div class="restaurant-info">
+            <h2>Green Life</h2>
+            <p class="restaurant-type">Saladas • Bowls • Comida saudável</p>
+
+            <div class="restaurant-meta">
+              <span><img src="../../assets/star2.svg" alt="Star-Icon"> 4,9</span>
+              <span><img src="../../assets/timer.svg" alt="Timer-Icon"> 25–35 min</span>
+              <span><img src="../../assets/location.svg" alt="Location-Icon"> 1,4 km</span>
+            </div>
+
+            <p class="restaurant-fee">
+              Taxa de entrega: <strong>&nbsp;R$ 4,50</strong>
+            </p>
+
+            <button class="btn-cardapio" type="button">Ver cardápio</button>
+          </div>
+        </article>
+
+        <!-- 4 -->
+        <article class="restaurant-card" data-category="sushi">
+          <div class="restaurant-thumb">
+            <img
+              src="https://images.pexels.com/photos/2098085/pexels-photo-2098085.jpeg"
+              alt="Tokyo Sushi"
+            />
+          </div>
+          <div class="restaurant-info">
+            <h2>Tokyo Sushi</h2>
+            <p class="restaurant-type">Sushi • Temaki • Combinados especiais</p>
+
+            <div class="restaurant-meta">
+              <span><img src="../../assets/star2.svg" alt="Star-Icon"> 4,6</span>
+              <span><img src="../../assets/timer.svg" alt="Timer-Icon"> 40–55 min</span>
+              <span><img src="../../assets/location.svg" alt="Location-Icon"> 4,0 km</span>
+            </div>
+
+            <p class="restaurant-fee">
+              Taxa de entrega: <strong>&nbsp;R$ 7,90</strong>
+            </p>
+
+            <button class="btn-cardapio" type="button">Ver cardápio</button>
+          </div>
+        </article>
+
+        <!-- 5 -->
+        <article class="restaurant-card" data-category="saudavel">
+          <div class="restaurant-thumb">
+            <img
+              src="https://lirp.cdn-website.com/33406c6e/dms3rep/multi/opt/post_thumbnail-ee08084921a6308cb730a26e5414ae0f-c7a107a9-640w.jpeg"
+              alt="Doce Encanto"
+            />
+          </div>
+          <div class="restaurant-info">
+            <h2>Doce Encanto</h2>
+            <p class="restaurant-type">Sobremesas • Brownies • Milkshakes</p>
+
+            <div class="restaurant-meta">
+              <span><img src="../../assets/star2.svg" alt="Star-Icon"> 4,9</span>
+              <span><img src="../../assets/timer.svg" alt="Timer-Icon"> 20–30 min</span>
+              <span><img src="../../assets/location.svg" alt="Location-Icon"> 1,0 km</span>
+            </div>
+
+            <p class="restaurant-fee">
+              Taxa de entrega: <strong>&nbsp;R$ 3,90</strong>
+            </p>
+
+            <button class="btn-cardapio" type="button">Ver cardápio</button>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-column footer-about">
+          <div class="footer-logo">
+            <span class="logo-text footer-logo-text">Foodly</span>
+          </div>
+          <h4>Sobre Nós</h4>
+          <p>
+            Somos uma plataforma inovadora que conecta você aos melhores
+            restaurantes parceiros. Nossa missão é facilitar o acesso à
+            gastronomia de qualidade com entrega rápida e experiência
+            excepcional.
+          </p>
+        </div>
+
+        <div class="footer-column">
+          <h4>Contato</h4>
+          <ul class="footer-contact">
+            <li>
+              <img src="../../assets/call.svg" alt="Call_Icon" />
+              <div class="footer-contact-content">
+                <h5>(81) 99999-9999</h5>
+                <span>Atendimento 24h</span>
+              </div>
+            </li>
+            <li>
+              <img src="../../assets/mail2.svg" alt="Mail_Icon" />
+              <div class="footer-contact-content">
+                <h5>contato@foodly.com</h5>
+                <span>Respostas em até 2h</span>
+              </div>
+            </li>
+            <li>
+              <img src="../../assets/map.svg" alt="Map_Icon" />
+              <div class="footer-contact-content">
+                <h5>Recife, Pernambuco</h5>
+                <span>Atendemos toda região metropolitana</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Foodly. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <!-- JS global -->
+    <script src="../../JS/Foodly/restaurantes.js" defer></script>
+  </body>
+</html>

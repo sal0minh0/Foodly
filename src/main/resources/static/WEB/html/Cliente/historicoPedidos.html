@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Foodly - Histórico de Pedidos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS da página de histórico -->
+    <link rel="stylesheet" href="../../css/Cliente/historicoPedidos.css" />
+  
+    <!-- Favicons -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../../assets/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../../assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../../assets/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="../../assets/favicon/site.webmanifest" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <header class="navbar">
+      <div class="navbar-left">
+        <div class="logo-box">
+          <img src="../../assets/logo.png" alt="Logo" />
+        </div>
+        <span class="logo-text">Foodly</span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="../Foodly/menuPrincipal.html">Início</a>
+        <a href="../Foodly/restaurantes.html">Restaurantes</a>
+        <a href="../Foodly/geradorComidas.html">Prato Supresa</a>
+        <a href="../Foodly/suporte.html">Suporte</a>
+      </nav>
+
+            <div class="cart-total" id="cart-total" style="display: none">
+              <p>Total: <strong id="cart-total-value">R$ 0,00</strong></p>
+            </div>
+
+            <button
+              class="cart-checkout"
+              id="cart-checkout"
+              style="display: none"
+            >
+              Finalizar Pedido
+            </button>
+          </div>
+        </div>
+
+        <a href="perfilCliente.html" class="icon-btn" aria-label="Perfil">
+          <img src="../../assets/silhouette.svg" alt="Cliente_Icon" />
+        </a>
+      </div>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="page">
+      <!-- Cabeçalho da página -->
+      <section class="header-section-his">
+        <div class="header-content">
+          <h1><img src="../../assets/clipboard2.svg" alt="Clipboard_Icon" /> Histórico de Pedidos</h1>
+          <p>
+            Veja todos os seus pedidos anteriores e acompanhe o que você mais
+            gosta de pedir.
+          </p>
+        </div>
+      </section>
+
+      <!-- Estatísticas rápidas -->
+      <section class="stats-section">
+        <div class="stats-container">
+          <div class="stat-card">
+            <div class="stat-icon">          
+              <img src="../../assets/bar_chart.svg" alt="Bar_Icon" />
+            </div>
+            <div class="stat-info">
+              <h3 id="total-pedidos">0</h3>
+              <p>Total de Pedidos</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">
+              <img src="../../assets/money.svg" alt="Money_Icon" />
+            </div>
+            <div class="stat-info">
+              <h3 id="total-gasto">R$ 0,00</h3>
+              <p>Total Gasto</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">
+              <img src="../../assets/pizza.svg" alt="Pizza_Icon" />
+            </div>
+            <div class="stat-info">
+              <h3 id="restaurante-favorito">-</h3>
+              <p>Restaurante Favorito</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">
+              <img src="../../assets/trophy.svg" alt="Trophy_Icon" />
+            </div>
+            <div class="stat-info">
+              <h3 id="item-favorito">-</h3>
+              <p>Prato Favorito</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Lista de pedidos -->
+      <section class="orders-section">
+        <div class="orders-container">
+          <div class="orders-header">
+            <h2>Seus Pedidos</h2>
+            <div class="orders-actions">
+              <div class="sort-options">
+                <select id="sort-select">
+                  <option value="data-desc">Mais Recentes</option>
+                  <option value="data-asc">Mais Antigos</option>
+                  <option value="valor-desc">Maior Valor</option>
+                  <option value="valor-asc">Menor Valor</option>
+                </select>
+              </div>
+              <button class="btn-clear-history" id="clearHistoryBtn">
+                <img src="../../assets/delete.svg" alt="Delete_Icon" /> 
+                <p>Limpar Histórico</p>
+              </button>
+            </div>
+          </div>
+
+          <div class="orders-list" id="ordersList">
+            <!-- Pedidos serão inseridos aqui dinamicamente -->
+          </div>
+
+          <!-- Estado vazio -->
+          <div class="empty-state" id="emptyState" style="display: none">
+            <div class="empty-content">
+              <div class="empty-icon">📦</div>
+              <h3>Nenhum pedido encontrado</h3>
+              <p>
+                Você ainda não fez nenhum pedido ou não há pedidos que
+                correspondam aos filtros selecionados.
+              </p>
+              <a href="../Foodly/restaurantes.html" class="btn-primary">
+                <img src="../../assets/restaurant2.svg" alt="Restaurant_Icon" /> Explorar Restaurantes
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-column footer-about">
+          <div class="footer-logo">
+            <span class="logo-text footer-logo-text">Foodly</span>
+          </div>
+          <h4>Sobre Nós</h4>
+          <p>
+            Somos uma plataforma inovadora que conecta você aos melhores
+            restaurantes parceiros. Nossa missão é facilitar o acesso à
+            gastronomia de qualidade com entrega rápida e experiência
+            excepcional.
+          </p>
+        </div>
+
+        <div class="footer-column">
+          <h4>Contato</h4>
+          <ul class="footer-contact">
+            <li>
+              <img src="../../assets/call.svg" alt="Call_Icon" />
+              <div class="footer-contact-content">
+                <h5>(81) 99999-9999</h5>
+                <span>Atendimento 24h</span>
+              </div>
+            </li>
+            <li>
+              <img src="../../assets/mail2.svg" alt="Mail_Icon" />
+              <div class="footer-contact-content">
+                <h5>contato@foodly.com</h5>
+                <span>Respostas em até 2h</span>
+              </div>
+            </li>
+            <li>
+              <img src="../../assets/map.svg" alt="Map_Icon" />
+              <div class="footer-contact-content">
+                <h5>Recife, Pernambuco</h5>
+                <span>Atendemos toda região metropolitana</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Foodly. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <!-- JS do histórico -->
+    <script src="../../JS/Cliente/historicoPedidos.js" defer></script>
+  </body>
+</html>

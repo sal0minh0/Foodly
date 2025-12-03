@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>FoodCart - Suporte Técnico</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/Foodly/suporte.css" />
+    <!-- Favicons -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../../assets/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../../assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../../assets/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="../../assets/favicon/site.webmanifest" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="navbar-left">
+        <div class="logo-box">
+          <img src="../../assets/logo.png" alt="Logo" />
+        </div>
+        <span class="logo-text">Foodly</span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="../Foodly/menuPrincipal.html">Início</a>
+        <a href="../Foodly/restaurantes.html">Restaurantes</a>
+        <a href="../Foodly/geradorComidas.html">Prato Surpresa</a>
+        <a href="../Foodly/suporte.html">Suporte</a>
+
+      </nav>
+
+            <div class="cart-total" id="cart-total" style="display: none">
+              <p>Total: <strong id="cart-total-value">R$ 0,00</strong></p>
+            </div>
+
+            <button
+              class="cart-checkout"
+              id="cart-checkout"
+              style="display: none"
+            >
+              Finalizar Pedido
+            </button>
+          </div>
+        </div>
+
+        <a href="../Cliente/perfilCliente.html" class="icon-btn" aria-label="Perfil">
+          <img src="../../assets/silhouette.svg" alt="Person" />
+        </a>
+      </div>
+    </header>
+
+    <main class="support-layout">
+      <!-- LADO ESQUERDO: INFORMAÇÕES -->
+      <section class="support-info">
+        <div class="hero-card">
+          <div class="hero-icon">
+            <img src="../../assets/chat.svg" alt="Chat" />
+          </div>
+          <div class="hero-dots">
+            <span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+
+        <h1 class="support-title">Como podemos ajudar?</h1>
+        <p class="support-subtitle">
+          Nossa equipe de suporte está aqui para resolver qualquer problema com
+          seu pedido ou aplicativo.
+        </p>
+
+        <div class="info-list">
+          <div class="info-card">
+            <div class="info-icon-clock">
+              <img src="../../assets/clock3.svg" alt="Clock-Icon" />
+            </div>
+            <div>
+              <h3>Horário de Atendimento</h3>
+              <p>Segunda a Domingo, 8h às 20h</p>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon-fast">
+              <img src="../../assets/bolt.svg" alt="Bolt-Icon" />
+            </div>
+            <div>
+              <h3>Resposta Rápida</h3>
+              <p>Respondemos em até 2 horas</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- LADO DIREITO: FORMULÁRIO -->
+      <section class="support-form-card">
+        <div class="form-header">
+          <h2>Suporte</h2>
+          <p>Descreva seu problema e nossa equipe irá te ajudar.</p>
+        </div>
+
+        <form class="support-form">
+          <!-- Nome -->
+          <div class="form-group">
+            <label for="nome">Nome</label>
+            <input
+              type="text"
+              id="nome"
+              name="nome"
+              placeholder="Seu nome completo"
+              required
+            />
+          </div>
+
+          <!-- Email -->
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="seu@email.com"
+              required
+            />
+          </div>
+
+          <!-- Categoria -->
+          <div class="form-group">
+            <label for="categoria">Categoria do Problema</label>
+            <select id="categoria" name="categoria" required>
+              <option value="" disabled selected>
+                Selecione uma categoria
+              </option>
+              <option value="app">Bug no aplicativo</option>
+              <option value="pedido">Problema com pedido</option>
+              <option value="pagamento">Reembolso</option>
+              <option value="conta">Minha conta</option>
+              <option value="outros">Outros</option>
+            </select>
+          </div>
+
+          <!-- Mensagem -->
+          <div class="form-group">
+            <label for="mensagem">Mensagem</label>
+            <textarea
+              id="mensagem"
+              name="mensagem"
+              rows="4"
+              placeholder="Descreva detalhadamente seu problema..."
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">Enviar Mensagem</button>
+        </form>
+      </section>
+    </main>
+
+    <!-- JavaScript principal -->
+    <script src="../../JS/Foodly/main.js" defer></script>
+  </body>
+</html>

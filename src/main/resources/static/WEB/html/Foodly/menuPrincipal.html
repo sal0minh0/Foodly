@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Foodly - Menu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS do menu -->
+    <link rel="stylesheet" href="../../css/Foodly/menuPrincipal.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <header class="navbar">
+      <div class="navbar-left">
+        <div class="logo-box">         
+          <img src="../../assets/logo.png" alt="Logo" />
+        </div>
+        <span class="logo-text">Foodly</span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#">Início</a>
+        <a href="restaurantes.html">Restaurantes</a>
+        <a href="geradorComidas.html">Prato Surpresa</a>
+        <a href="suporte.html">Suporte</a>
+      </nav>
+
+      <div class="navbar-right">
+        <!-- Ícone do sininho + dropdown de promoções -->
+        <div class="notification-wrapper">
+          <button class="icon-btn notification-btn" aria-label="Promoções">
+            <img src="../../assets/notification.svg" alt="Notification" />
+          </button>
+
+          <!-- CAIXA DE PROMOÇÕES (aparece ao passar o mouse) -->
+          <div class="promo-dropdown">
+            <div class="promo-header">
+              <h3>Promoções Especiais</h3>
+              <p>Ofertas dos nossos restaurantes</p>
+            </div>
+
+            <div class="promo-list">
+              <!-- Promo 1 -->
+              <article class="promo-item">
+                <div class="promo-thumb">
+                  <img
+                    src="https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg"
+                    alt="Burger Prime"
+                  />
+                </div>
+                <div class="promo-info">
+                  <h4>50% OFF na primeira compra</h4>
+                  <p class="promo-restaurant">Burger Prime</p>
+                </div>
+                <span class="promo-badge">Novo</span>
+              </article>
+
+              <!-- Promo 2 -->
+              <article class="promo-item">
+                <div class="promo-thumb">
+                  <img
+                    src="https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg"
+                    alt="Nonna Bella"
+                  />
+                </div>
+                <div class="promo-info">
+                  <h4>Pizza Família por R$ 39,90</h4>
+                  <p class="promo-restaurant">Nonna Bella</p>
+                </div>
+                <span class="promo-badge">Novo</span>
+              </article>
+
+              <!-- Promo 3 -->
+              <article class="promo-item">
+                <div class="promo-thumb">
+                  <img
+                    src="https://images.pexels.com/photos/1640770/pexels-photo-1640770.jpeg"
+                    alt="Green Life"
+                  />
+                </div>
+                <div class="promo-info">
+                  <h4>Combo Saudável + Suco</h4>
+                  <p class="promo-restaurant">Green Life</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+        
+        <a href="../Cliente/perfilCliente.html" class="icon-btn" aria-label="Perfil">
+          <img src="../../assets/silhouette.svg" alt="Person" />
+        </a>
+      </div>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL (MENU) -->
+    <main class="page">
+      <section class="menu-header">
+        <h1>Descubra o seu próximo pedido favorito</h1>
+        <p>
+          Veja os destaques do dia e aproveite as melhores ofertas dos
+          restaurantes parceiros.
+        </p>
+      </section>
+
+      <section class="menu-grid">
+        <article class="menu-card">
+          <img
+            src="https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg"
+            alt="Hambúrguer especial"
+          />
+          <div class="menu-info">
+            <h2>Hambúrguer Especial</h2>
+            <p>
+              Carne artesanal, queijo derretido, molho da casa e fritas
+              crocantes.
+            </p>
+            <span class="price">R$ 29,90</span>
+          </div>
+        </article>
+
+        <article class="menu-card">
+          <img
+            src="https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg"
+            alt="Pizza Marguerita"
+          />
+          <div class="menu-info">
+            <h2>Pizza Marguerita</h2>
+            <p>
+              Massa fina, molho de tomate, queijo muçarela, manjericão fresco.
+            </p>
+            <span class="price">R$ 39,90</span>
+          </div>
+        </article>
+
+        <article class="menu-card">
+          <img
+            src="https://lirp.cdn-website.com/33406c6e/dms3rep/multi/opt/post_thumbnail-ee08084921a6308cb730a26e5414ae0f-c7a107a9-640w.jpeg"
+            alt="Sobremesa especial"
+          />
+          <div class="menu-info">
+            <h2>Sobremesa Especial</h2>
+            <p>Brownie com sorvete e calda de chocolate.</p>
+            <span class="price">R$ 19,90</span>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <!-- SEÇÃO "POR QUE ESCOLHER A GENTE?" (ANTES DO FOOTER) -->
+    <section class="why-choose">
+      <div class="why-container">
+        <h2 class="why-title">Por que escolher a gente?</h2>
+        <p class="why-subtitle">
+          Comprometidos em oferecer a melhor experiência gastronômica
+        </p>
+
+        <div class="why-grid">
+          <article class="why-card">
+            <div class="why-icon">
+              <img src="../../assets/clock2.svg" alt="Clock" />
+            </div>
+            <h3>Entrega Rápida</h3>
+            <p>Seus pratos favoritos chegam em até 45 minutos.</p>
+          </article>
+
+          <article class="why-card">
+            <div class="why-icon">
+              <img src="../../assets/shield2.svg" alt="Shield" />
+            </div>
+            <h3>Qualidade Garantida</h3>
+            <p>Ingredientes frescos e preparo cuidadoso em cada pedido.</p>
+          </article>
+
+          <article class="why-card">
+            <div class="why-icon">
+              <img src="../../assets/truck.svg" alt="Truck" />
+            </div>
+            <h3>Entrega Gratuita</h3>
+            <p>Frete grátis em pedidos acima de R$ 35,00.</p>
+          </article>
+
+          <article class="why-card">
+            <div class="why-icon">
+              <img src="../../assets/star2.svg" alt="Star" />
+            </div>
+            <h3>Avaliação 5 Estrelas</h3>
+            <p>Mais de 2.500 clientes satisfeitos com a plataforma.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+   <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-column footer-about">
+          <div class="footer-logo">
+            <span class="logo-text footer-logo-text">Foodly</span>
+          </div>
+          <h4>Sobre Nós</h4>
+          <p>
+            Somos uma plataforma inovadora que conecta você aos melhores
+            restaurantes parceiros. Nossa missão é facilitar o acesso à
+            gastronomia de qualidade com entrega rápida e experiência
+            excepcional.
+          </p>
+        </div>
+
+        <div class="footer-column">
+          <h4>Contato</h4>
+          <ul class="footer-contact">
+            <li>
+              <img src="../../assets/call.svg" alt="Call_Icon" />
+              <div class="footer-contact-content">
+                <h5>(81) 99999-9999</h5>
+                <span>Atendimento 24h</span>
+              </div>
+            </li>
+            <li>
+              <img src="../../assets/mail2.svg" alt="Mail_Icon" />
+              <div class="footer-contact-content">
+                <h5>contato@foodly.com</h5>
+                <span>Respostas em até 2h</span>
+              </div>
+            </li>
+            <li>
+              <img src="../../assets/map.svg" alt="Map_Icon" />
+              <div class="footer-contact-content">
+                <h5>Recife, Pernambuco</h5>
+                <span>Atendemos toda região metropolitana</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Foodly. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <!-- JS principal (seu arquivo global) -->
+    <script src="../../JS/Foodly/main.js" defer></script>
+  </body>
+</html>
