@@ -1,4 +1,6 @@
-const API_BASE_URL = "http://localhost:8080/api";
+import CONFIG from "../../config/api.js";
+
+const API_BASE_URL = CONFIG.API_URL;
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("form-cadastro-cliente");

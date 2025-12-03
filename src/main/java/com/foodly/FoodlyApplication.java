@@ -17,6 +17,7 @@ public class FoodlyApplication {
         System.out.println("\n===========================================");
         System.out.println("✅ API está rodando!");
         System.out.println("🌐 Acesse: http://localhost:8080");
+        System.out.println("🌐 Ou para o deploy acesse: http://ec2-52-15-171-120.us-east-2.compute.amazonaws.com:8080");
         System.out.println("===========================================\n");
     }
 }

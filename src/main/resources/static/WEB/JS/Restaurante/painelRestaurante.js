@@ -1,5 +1,8 @@
+import CONFIG from "../../config/api.js";
+
 if (window.location.pathname.includes("painelRestaurante.html")) {
-  const API_URL = "http://localhost:8080/api";
+  
+  const API_URL = CONFIG.API_URL;
 
   // Elementos do DOM
   const restauranteNome = document.getElementById("restaurante-nome");

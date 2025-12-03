@@ -1,5 +1,8 @@
+import CONFIG from "../../config/api.js";
+
 if (window.location.pathname.includes("gerenciarCardapio.html")) {
-  const API_URL = "http://localhost:8080/api";
+  
+  const API_URL = CONFIG.API_URL;
 
   // Elementos do DOM
   const btnAdicionarProduto = document.getElementById("btn-adicionar-produto");

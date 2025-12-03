@@ -1,4 +1,6 @@
-const API_URL = "http://localhost:8080/api";
+import CONFIG from "../../config/api.js";
+
+const API_URL = CONFIG.API_URL;
 let usuarioAtual = null;
 let isPremium = false;
 
