@@ -1,8 +1,6 @@
-import CONFIG from "../../config/api.js";
-
 if (window.location.pathname.includes("promocoesRestaurante.html")) {
   const API_URL = CONFIG.API_URL;
-  
+
   // Elementos do DOM
   const btnAdicionarPromocao = document.getElementById(
     "btn-adicionar-promocao"
@@ -156,7 +154,9 @@ if (window.location.pathname.includes("promocoesRestaurante.html")) {
             promocao.descricao || "Sem descrição"
           }</p>
           <div style="margin: 12px 0; font-size: 13px; color: #6b7280;">
-            <div><strong style="">Início:</strong> ${formatarData(promocao.dataInicio)}</div>
+            <div><strong style="">Início:</strong> ${formatarData(
+              promocao.dataInicio
+            )}</div>
             <div><strong>Fim:</strong> ${formatarData(promocao.dataFim)}</div>
             ${
               expirou

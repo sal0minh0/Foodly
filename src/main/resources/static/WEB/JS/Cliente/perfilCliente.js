@@ -1,9 +1,6 @@
-import CONFIG from "../../config/api.js";
-
 // Verificar se estamos na página de perfil
 if (window.location.pathname.includes("perfilCliente.html")) {
   const API_URL = CONFIG.API_URL;
-  
 
   // Elementos do DOM
   const perfilNome = document.getElementById("perfil-nome");

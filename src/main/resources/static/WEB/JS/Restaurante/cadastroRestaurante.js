@@ -1,5 +1,3 @@
-import CONFIG from "../../config/api.js";
-
 const API_URL = CONFIG.API_URL;
 
 const formCadastro = document.getElementById("form-cadastro-restaurante");

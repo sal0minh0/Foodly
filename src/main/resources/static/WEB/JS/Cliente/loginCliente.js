@@ -1,5 +1,3 @@
-import CONFIG from "../../config/api.js";
-
 const API_URL = CONFIG.API_URL;
 
 document.addEventListener("DOMContentLoaded", () => {

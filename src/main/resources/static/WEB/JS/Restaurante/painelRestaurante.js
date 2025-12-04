@@ -1,7 +1,4 @@
-import CONFIG from "../../config/api.js";
-
 if (window.location.pathname.includes("painelRestaurante.html")) {
-  
   const API_URL = CONFIG.API_URL;
 
   // Elementos do DOM
@@ -56,7 +53,8 @@ if (window.location.pathname.includes("painelRestaurante.html")) {
       // Verificar se é restaurante
       if (usuarioAtual.tipoUsuario !== "restaurante") {
         alert("Acesso negado. Este painel é apenas para restaurantes.");
-        window.location.href = "../../html/escolhaPerfil.html";        return;
+        window.location.href = "../../html/escolhaPerfil.html";
+        return;
       }
 
       // Buscar dados do restaurante
@@ -372,7 +370,8 @@ if (window.location.pathname.includes("painelRestaurante.html")) {
     localStorage.removeItem("token");
     localStorage.removeItem("usuario");
     localStorage.removeItem("usuarioLogado");
-    window.location.href = "../../html/escolhaPerfil.html";  }
+    window.location.href = "../../html/escolhaPerfil.html";
+  }
 
   // Event Listeners
   if (btnEditarRestaurante)
