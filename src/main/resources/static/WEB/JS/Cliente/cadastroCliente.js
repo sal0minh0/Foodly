@@ -27,7 +27,7 @@ async function handleCadastro(event) {
     return;
   }
 
-  console.log("Enviando dados:", data); // Debug
+  console.log("Enviando dados:", data);
 
   try {
     const response = await fetch(`${API_BASE_URL}/clientes/cadastrar`, {
@@ -38,22 +38,25 @@ async function handleCadastro(event) {
       body: JSON.stringify(data),
     });
 
-    console.log("Status da resposta:", response.status); // Debug
+    console.log("Status da resposta:", response.status);
+
+    if (!response.ok) {
+      const result = await response.json();
+      console.error("❌ Erro no cadastro:", result);
+      alert(result.message || "Erro ao realizar cadastro");
+      return;
+    }
 
     const result = await response.json();
-    console.log("Resposta do servidor:", result); // Debug
+    console.log("Resposta do servidor:", result);
+    console.log("✅ Cadastro bem-sucedido!");
 
-    if (response.ok) {
-      alert(
-        `Cadastro realizado com sucesso! ID do cliente: ${result.clienteId}`
-      );
-      // Redirecionar para login
-      window.location.href = "../../html/Cliente/loginCliente.html";
-    } else {
-      alert(result.message || "Erro ao realizar cadastro");
-    }
+    alert(`Cadastro realizado com sucesso! ID do cliente: ${result.clienteId}`);
+
+    console.log("🔄 Redirecionando para login...");
+    window.location.href = "loginCliente.html";
   } catch (error) {
-    console.error("Erro detalhado:", error);
+    console.error("❌ Erro detalhado:", error);
     alert(
       "Erro ao conectar com o servidor. Verifique se o backend está rodando."
     );

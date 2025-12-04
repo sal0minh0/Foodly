@@ -1,6 +1,6 @@
 # Foodly-projeto-feito
 
-> Projeto em Java com Spring para a API
+> Projeto em Java com Spring para a API <br>
 > Frontend estático normal com HTML, CSS e JS
 
 >[!NOTE]
